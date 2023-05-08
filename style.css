@@ -1,69 +1,63 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    height: 100%;
-    width: 100%;
-  }
-  
-  body {
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .clock {
-    height: 20vh;
-    color: white;
-    font-size: 22vh;
-    font-family: sans-serif;
-    line-height: 20.4vh;
-    display: flex;
-    position: relative;
-    /*background: green;*/
-    overflow: hidden;
-  }
-  
-  .clock::before, .clock::after {
-    content: '';
-    width: 7ch;
-    height: 3vh;
-    background: linear-gradient(to top, transparent, black);
-    position: absolute;
-    z-index: 2;
-  }
-  
-  .clock::after {
-    bottom: 0;
-    background: linear-gradient(to bottom, transparent, black);
-  }
-  
-  .clock > div {
-    display: flex;
-  }
-  
-  .tick {
-    line-height: 17vh;
-  }
-  
-  .tick-hidden {
-    opacity: 0;
-  }
-  
-  .move {
-    animation: move linear 1s infinite;
-  }
-  
-  @keyframes move {
-    from {
-      transform: translateY(0vh);
-    }
-    to {
-      transform: translateY(-20vh);
-    }
-  }
-  
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #10101E;
+}
+
+.datetime{
+  color: #fff;
+  background: #10101E;
+  font-family: "Segoe UI", sans-serif;
+  width: 340px;
+  padding: 15px 10px;
+  border: 3px solid #2E94E3;
+  border-radius: 5px;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(255, 255, 255, 0.1));
+  transition: 0.5s;
+  transition-property: background, box-shadow;
+}
+
+.datetime:hover{
+  background: #2E94E3;
+  box-shadow: 0 0 30px #2E94E3;
+}
+
+.date{
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.time{
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time span:not(:last-child){
+  position: relative;
+  margin: 0 6px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.time span:last-child{
+  background: #2E94E3;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 10px;
+  padding: 0 5px;
+  border-radius: 3px;
+}
+      
